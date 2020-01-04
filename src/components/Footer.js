@@ -1,6 +1,6 @@
 import React from 'react';
 
-/* For use API newsAPI.orf free plan need especificate attribution*/
+/* For use API newsAPI.org free plan need especificate attribution*/
 const Footer = () => {
     return (
        
