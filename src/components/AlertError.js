@@ -1,5 +1,4 @@
 import React from 'react';
-import './AlertError.css';
 
 const AlertError = ({errors}) => {
 
