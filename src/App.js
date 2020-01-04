@@ -15,7 +15,8 @@ class App extends Component {
   componentDidMount(){
     const requestPromise = this.getNewsFromRemote();
     
-    requestPromise.then(data=>{
+    requestPromise
+    .then(data=>{
       if(data.status!=='ok') throw new Error(`${data.code} ${data.message}`);
 
       this.setState({
@@ -32,9 +33,9 @@ class App extends Component {
     })
   }
 
-  getNewsFromRemote = async () =>{
+  getNewsFromRemote = async (category='business') =>{
 
-    const endpoint = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.REACT_APP_TOKEN_NEWS_API}`;
+    const endpoint = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.REACT_APP_TOKEN_NEWS_API}`;
     let response = await fetch(endpoint);
     let data = await response.json();
     return data 
