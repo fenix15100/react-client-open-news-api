@@ -12,9 +12,7 @@ class App extends Component {
       <Fragment>
         <h1>Its, works</h1>
         <Footer/>
-      </Fragment>
-
-      
+      </Fragment>  
     );
   }
 }

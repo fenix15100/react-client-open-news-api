@@ -1,8 +1,12 @@
 import React from 'react';
 
+/* For use API newsAPI.orf free plan need especificate attribution*/
 const Footer = () => {
     return (
-        <footer>Powered by NewsAPI.org</footer>
+       
+        <footer>
+            <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer">Powered by NewsAPI.org</a>
+        </footer>
     );
 }
 
