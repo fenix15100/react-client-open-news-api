@@ -2,6 +2,8 @@ import React,{ Component,Fragment } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AlertError from './components/AlertError';
+import ListNews from './components/ListNews';
+import FormCategory from './components/FormCategory'
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +16,20 @@ class App extends Component {
   }
 
   componentDidMount(){
-    const requestPromise = this.getNewsFromRemote();
+    this.handlePromiseNews(); 
+  }
+
+  getNewsFromRemote = async (category='general') =>{
+
+    const endpoint = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.REACT_APP_TOKEN_NEWS_API}`;
+    let response = await fetch(endpoint);
+    let data = await response.json();
+
+    return data   
+  }
+
+  handlePromiseNews=(category)=>{
+    const requestPromise = this.getNewsFromRemote(category);
     
     requestPromise
     .then(data=>{
@@ -32,24 +47,26 @@ class App extends Component {
         error:true
       })
     })
+
   }
 
-  getNewsFromRemote = async (category='business') =>{
 
-    const endpoint = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.REACT_APP_TOKEN_NEWS_API}`;
-    let response = await fetch(endpoint);
-    let data = await response.json();
-    return data 
-    
-  }
+  
 
   render() {
     return (
       <Fragment>
         <Header titulo='Cliente React de Noticias'/>
+
         {this.state.error
         ?<AlertError errors={['No se han podido obtener las noticias desde el sitio remoto...']}/>
-        :null} 
+        :null}
+
+        <div className="container white contenedor-noticias">
+          <FormCategory handlePromiseNews={this.handlePromiseNews}/>  
+          <ListNews Listnews={this.state.news}/>
+        </div>
+
         <Footer/>
       </Fragment>  
     );
