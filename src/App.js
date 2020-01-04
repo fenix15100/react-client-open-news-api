@@ -1,6 +1,7 @@
 import React,{ Component,Fragment } from 'react';
-import Footer from './components/Footer'
-import AlertError from './components/AlertError'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import AlertError from './components/AlertError';
 
 class App extends Component {
   constructor(props) {
@@ -45,12 +46,10 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Cliente de Noticias</h1>
-
+        <Header titulo='Cliente React de Noticias'/>
         {this.state.error
         ?<AlertError errors={['No se han podido obtener las noticias desde el sitio remoto...']}/>
-        :null}
-        
+        :null} 
         <Footer/>
       </Fragment>  
     );
