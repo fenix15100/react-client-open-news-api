@@ -8,7 +8,6 @@ class App extends Component {
     this.state = {  };
   }
   render() {
-    console.log(process.env.REACT_APP_TOKEN_NEWS_API);
     return (
       <Fragment>
         <h1>Its, works</h1>
