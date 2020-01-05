@@ -2,6 +2,7 @@
 Small app developed in React.
 
 This is a news client that consumes the api newsapi.org/.
+
 For its development it has been used:
 * Class Components
 * Stateless Components
@@ -17,11 +18,11 @@ That token you must place in the .env.example file and rename the file to .env
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Screenshots
-![Alt text](screenshots/Capture1.PNG?raw=true "Title")
+![Alt text](screenshots/Captura1.PNG?raw=true "Title")
 
-![Alt text](screenshots/Capture2.PNG?raw=true "Title")
+![Alt text](screenshots/Captura2.PNG?raw=true "Title")
 
-![Alt text](screenshots/Capture4.PNG?raw=true "Title")
+![Alt text](screenshots/Captura3.PNG?raw=true "Title")
 
 
 
