@@ -21,8 +21,14 @@ class App extends Component {
 
   getNewsFromRemote = async (category='general') =>{
 
-    const endpoint = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.REACT_APP_TOKEN_NEWS_API}`;
-    let response = await fetch(endpoint);
+    const endpoint = `https://newsapi.org/v2/top-headlines?country=us&category=${category}`;
+    const request ={
+      method : 'GET',
+      headers : {
+        'x-api-key' : process.env.REACT_APP_TOKEN_NEWS_API
+      }
+    }
+    let response = await fetch(endpoint,request);
     let data = await response.json();
 
     return data   
