@@ -9,6 +9,7 @@ For its development it has been used:
 * Async / await fuctions
 * Promises
 * Fecht API
+* Materialize.css Framework
 
 This app belongs to my humble Front-End development portfolio.
 
