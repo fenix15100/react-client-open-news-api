@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class FormCategory extends Component {
-    state = { 
-        category : 'general'
-    }
 
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          category : 'general'
+         };
+    }
+    
 
     changeCategory = e => {
         this.setState({
