@@ -1,7 +1,7 @@
 
 Small app developed in React.
 
-This is a news client that consumes the api newsapi.org/.
+This is a news client that consumes the api [NewsApi.org](https://newsapi.org).
 
 For its development it has been used:
 * Class Components
